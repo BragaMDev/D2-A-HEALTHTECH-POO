@@ -253,7 +253,7 @@ classDiagram
     TipoPlano ..> Plano : fábrica
 ```
 
-## 2. Hierarquia de exceções (R10)
+## 2. Hierarquia de exceções 
 
 ```mermaid
 classDiagram
