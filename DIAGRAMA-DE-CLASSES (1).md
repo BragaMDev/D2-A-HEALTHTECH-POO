@@ -1,22 +1,5 @@
 # Diagrama de Classes — Academia e Planos (D2 · HEALTHTECH)
 
-> Diagrama em Mermaid, renderizado automaticamente pelo GitHub. Pacote base: `academia`.
-
-## Legenda das setas
-
-| Seta | Significado |
-|---|---|
-| `A <\|-- B` (linha cheia, triângulo vazado) | **Herança** (`B extends A`) |
-| `A <\|.. B` (linha pontilhada, triângulo vazado) | **Realização** (`B implements A`) |
-| `A *-- B` (losango preenchido) | **Composição** (A tem-um B, e B vive e morre com A) |
-| `A o-- B` (losango vazado) | Agregação |
-| `A --> B` | Associação (A tem um atributo do tipo B) |
-| `A ..> B` | Dependência (A usa ou cria B) |
-
-Estereótipos: `<<abstract>>`, `<<interface>>`, `<<enumeration>>` e `<<record>>`.
-
-## 1. Domínio, serviços, planos, enums e records
-
 ```mermaid
 classDiagram
     direction TB
@@ -245,7 +228,7 @@ classDiagram
     Main --> RelogioSimulado
 ```
 
-## 2. Hierarquia de exceções
+## Hierarquia de exceções
 
 ```mermaid
 classDiagram
