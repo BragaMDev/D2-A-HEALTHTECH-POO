@@ -1,9 +1,5 @@
 # Diagrama de Classes — Academia e Planos (D2 · HEALTHTECH)
 
-> Renderizado automaticamente pelo GitHub (Mermaid). Pacote base: `academia`.
-
-## 1. Domínio e serviços
-
 ```mermaid
 classDiagram
     direction TB
@@ -289,16 +285,3 @@ classDiagram
     RegraDeNegocioException <|-- TransicaoDeEstadoInvalidaException
     RegraDeNegocioException <|-- AvaliacaoFisicaVencidaException
 ```
-
-## Legenda
-
-| Símbolo | Significado |
-|---|---|
-| `<\|--` | Herança (extends) |
-| `<\|..` / `..\|>` | Implementação de interface |
-| `*--` | Composição (o todo controla o ciclo de vida das partes) |
-| `o--` | Agregação |
-| `-->` | Associação (atributo) |
-| `..>` | Dependência (uso / criação) |
-| `*` após o método | Método abstrato |
-| `$` | Membro estático |
