@@ -168,7 +168,7 @@ stateDiagram-v2
 
 ---
 
-### A · Testes automatizados (JUnit 5, pasta `test/`)
+### A · Testes automatizados (JUnit 5, pasta `test/`) - RESERVA
 
 Suíte composta por **28 testes distribuídos em 6 classes**, utilizando `assertThrows` para validar todas as exceções de domínio.
 
