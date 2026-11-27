@@ -141,8 +141,37 @@ stateDiagram-v2
 - **Exceções de domínio:** todas herdam de `RegraDeNegocioException`; o `Main` as captura e mostra a mensagem sem encerrar o programa.
 - **Ordenação:** `Aluno` é `Comparable` e `Matricula` expõe comparadores (`POR_NOME`, `POR_ESTADO_E_NOME`).
 
-## Limitações
+## Desafios implementados (A, C e D)
 
-- Os dados ficam apenas em memória e são perdidos ao fechar o programa.
-- Não há testes automatizados nem ferramenta de build (Maven ou Gradle).
-- Este repositório não define uma licença.
+### C · Padrão Strategy (desconto da mensalidade)
+
+* **Interface:** `desconto/PoliticaDeDesconto` (`aplicar(matricula, valorBase)` + `descricao()`).
+* **Estratégias:** `SemDesconto` (padrão), `DescontoPercentual(n)` e `DescontoPorFrequencia` (10% com 12+ check-ins).
+* **Troca em tempo de execução:** `SecretariaDaAcademia.trocarPoliticaDeDesconto(...)`; vale para as próximas mensalidades.
+* **Integração:** `Matricula.gerarMensalidade(venc, hoje, politica)` utiliza a estratégia ativa e armazena o valor final em `Mensalidade.valor()`.
+* **Menu:** opção `16`.
+
+---
+
+### D · Relatórios com Streams (`servico/RelatoriosGerenciais`)
+
+| # | Relatório | Recursos utilizados |
+| :-: | :--- | :--- |
+| **1** | Matrículas por estado | `groupingBy` + `counting` |
+| **2** | Mensalidades pendentes por plano | `groupingBy` + `flatMapping` + `reducing` |
+| **3** | Inadimplentes (maior atraso primeiro) | `filter` + `map` + `sorted` |
+| **4** | Ranking de frequência (top N) | `map` + `sorted` + `limit` |
+| **5** | Média de check-ins por plano | `groupingBy` + `averagingInt` |
+
+* A classe apenas processa e devolve os dados; a `Main` é responsável pela impressão.
+* **Menu:** opção `17`.
+
+---
+
+### A · Testes automatizados (JUnit 5, pasta `test/`)
+
+Suíte composta por **28 testes distribuídos em 6 classes**, utilizando `assertThrows` para validar todas as exceções de domínio.
+
+#### Executando com Maven (requer JDK 17+ e Maven)
+```bash
+mvn test
