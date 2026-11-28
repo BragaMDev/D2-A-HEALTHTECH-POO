@@ -1,0 +1,24 @@
+# Build do Maven (arquivos compilados e gerados)
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Arquivos específicos de máquina/IDE (IntelliJ IDEA)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Logs e arquivos temporários
+*.log
+hs_err_pid*
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Variáveis de ambiente / segredos (se usar futuramente)
+.env
+*.local
