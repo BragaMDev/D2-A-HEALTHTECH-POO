@@ -228,7 +228,7 @@ classDiagram
     Main --> RelogioSimulado
 ```
 
-## Hierarquia de exceções
+## Hierarquia de Exceções
 
 ```mermaid
 classDiagram
